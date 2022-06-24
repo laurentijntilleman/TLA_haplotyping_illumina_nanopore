@@ -11,14 +11,6 @@ viewpointpos = int(argv[4])
 
 print(chromosome)
 
-# test
-
-#hapfile_path = "temp/all_reads_sorted_name.hap"
-#pgsnp_path = "temp/all_reads_sorted_name.pgsnp"
-#vcf_path = "../all/merge_output.vcf.gz"
-#vcf_out_file = 'variants.vcf'
-#chromosome = 'chr10:0-1358452456'
-
 def recalculate_all(hap1, hap2):
     allpositions = pd.concat([hap1['pos'], hap2['pos']], axis=0).drop_duplicates()
     for position in allpositions:
@@ -635,12 +627,6 @@ class VCF_file:
             fh.write('\t'.join([str(x) for x in self.data.columns])+'\n')
             for row in self.data.index:
                 fh.write('\t'.join([str(x) for x in self.data.loc[row]])+'\n')
-        
-# path = '/home/ltillema/eigenProjects/20191101_long_read_PGx_sequencing/20210617_TLA_poging2/20220107_Nanopore/'
-# vcf_path = f'{path}variant_data/all/merge_output.vcf.gz'
-# chromosome = 'chr10:0-1525'
-# haps_out = pd.read_csv(f'{path}variant_data/CYP2C19_nanopore/all_reads_sorted_name_haps.txt',sep='\t')
-# vcf_out_file = f'{path}variant_data/CYP2C19_nanopore/variant.vcf'    
 
 variants_vcf = VCF_file(vcf_path,chromosome.split(':')[0])
 variants_vcf.phase(haps_out)
