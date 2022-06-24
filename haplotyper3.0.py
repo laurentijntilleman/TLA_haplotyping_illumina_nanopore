@@ -16,18 +16,6 @@ min_variants_phase_block = int(argv[6])-1
 viewpointpos = int(argv[7])
 fill_undifinded_varaints = bool(argv[8]=='True')
 
-# test
-
-#path_bam =  '../phasing/nanopore/CYP2C19_chr10_filter_100_phased_2.bam'
-#path_vcf = '../phasing/nanopore/CYP2C19_chr10_phased_haplo.vcf.gz'
-#basename =  '../phasing/nanopore/CYP2C19_2_'
-#chromosome = 'chr10'
-#gene_start = 94761287
-#gene_stop = 94853205
-#min_variants_phase_block = 1
-#viewpointpos = 0
-#fill_undifinded_varaints = True
-
 print('Start haplotyping')
 print('Input:')
 print(f"  Input bam:       {path_bam}")
